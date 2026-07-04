@@ -16,7 +16,7 @@ type Project = {
 
 const projects: Project[] = [
   {
-    image: '/images/project-naaptol.jpg',
+    image: '/images/projects/naptol.jpg',
     year: '2021',
     title: 'Naaptol',
     description:
@@ -25,7 +25,7 @@ const projects: Project[] = [
     award: null,
   },
   {
-    image: '/images/project-fire-robot.jpg',
+    image: '/images/projects/roblaze.jpg',
     year: '2024',
     title: 'Roblaze Fire-Fighting Robot',
     description:
@@ -35,7 +35,7 @@ const projects: Project[] = [
     video: '/videos/roblaze-fsf.mp4',
   },
   {
-    image: '/images/project-diginurse.jpg',
+    image: '/images/projects/diginurse.jpg',
     year: '2025',
     title: 'DigiNurse',
     description:
