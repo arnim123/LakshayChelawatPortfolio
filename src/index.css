@@ -1,0 +1,208 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 216 48% 9%;
+    --foreground: 40 33% 94%;
+    --card: 216 48% 9%;
+    --card-foreground: 40 33% 94%;
+    --popover: 216 48% 9%;
+    --popover-foreground: 40 33% 94%;
+    --primary: 43 65% 52%;
+    --primary-foreground: 216 48% 9%;
+    --secondary: 216 32% 13%;
+    --secondary-foreground: 40 33% 94%;
+    --muted: 216 32% 13%;
+    --muted-foreground: 40 33% 74%;
+    --accent: 216 32% 13%;
+    --accent-foreground: 40 33% 94%;
+    --destructive: 350 73% 44%;
+    --destructive-foreground: 40 33% 94%;
+    --border: 40 33% 94% / 0.15;
+    --input: 40 33% 94% / 0.15;
+    --ring: 43 65% 52%;
+    --radius: 0.25rem;
+  }
+
+  * {
+    @apply border-cream-dim;
+  }
+
+  body {
+    @apply bg-navy text-cream font-body antialiased;
+    font-weight: 300;
+  }
+
+  html {
+    scroll-behavior: auto;
+    overflow-x: hidden;
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+    font-weight: 300;
+  }
+}
+
+@layer components {
+  /* Reveal on scroll system */
+  .reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .reveal-left {
+    opacity: 0;
+    transform: translateX(-40px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  .reveal-right {
+    opacity: 0;
+    transform: translateX(40px);
+    transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+                transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .reveal-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+  /* Hero animations - initial hidden state */
+  .hero-anim {
+    opacity: 0;
+  }
+
+  /* Primary button */
+  .btn-primary {
+    @apply inline-block bg-gold text-navy font-body font-medium text-sm uppercase tracking-widest px-10 py-4 transition-all duration-300;
+  }
+
+  .btn-primary:hover {
+    @apply bg-gold-light;
+    transform: scale(1.02);
+  }
+
+  /* Secondary button */
+  .btn-secondary {
+    @apply inline-block border border-gold text-gold bg-transparent font-body font-medium text-sm uppercase tracking-widest px-10 py-4 transition-all duration-300;
+  }
+
+  .btn-secondary:hover {
+    @apply bg-gold text-navy;
+  }
+
+  /* Ghost link */
+  .ghost-link {
+    @apply inline-flex items-center gap-2 text-gold font-body text-sm transition-all duration-300;
+  }
+
+  .ghost-link:hover .arrow-icon {
+    transform: translateX(4px);
+  }
+
+  .arrow-icon {
+    transition: transform 0.3s ease;
+  }
+
+  /* Award badge */
+  .award-badge {
+    @apply inline-flex items-center gap-1 bg-red-accent text-cream font-body text-xs uppercase tracking-wider px-3 py-1 rounded-full;
+  }
+
+  /* Card pattern */
+  .card-pattern {
+    @apply bg-navy-light border border-cream-dim rounded transition-all duration-300;
+  }
+
+  .card-pattern:hover {
+    border-color: rgba(212, 175, 55, 0.3);
+  }
+
+  /* Caption label */
+  .caption-label {
+    @apply font-body text-base uppercase tracking-[0.15em] text-gold;
+  }
+
+  /* Timeline line animation */
+  .timeline-line {
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: transform 1.5s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  .timeline-line.visible {
+    transform: scaleY(1);
+  }
+
+  /* Timeline dot */
+  .timeline-dot {
+    transform: scale(0);
+  }
+
+  .timeline-dot.visible {
+    animation: timeline-pop 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+}
+
+@layer utilities {
+  /* Section padding */
+  .section-padding {
+    @apply py-24 lg:py-32;
+    padding-left: clamp(20px, 4vw, 80px);
+    padding-right: clamp(20px, 4vw, 80px);
+  }
+
+  .section-padding-x {
+    padding-left: clamp(20px, 4vw, 80px);
+    padding-right: clamp(20px, 4vw, 80px);
+  }
+
+  .container-main {
+    @apply mx-auto w-full;
+    max-width: 1400px;
+  }
+
+  .container-narrow {
+    @apply mx-auto w-full;
+    max-width: 1200px;
+  }
+}
+
+/* Smooth scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0A1628;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #E8C84B;
+}
