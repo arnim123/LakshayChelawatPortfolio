@@ -52,7 +52,7 @@ export default function AboutSection() {
           <RevealOnScroll direction="left" className="flex justify-center lg:justify-start">
             <div className="w-full max-w-[360px] lg:max-w-none aspect-[4/5] rounded overflow-hidden border border-cream-dim">
               <img
-                src="/images/about-portrait.jpg"
+                src="/images/profile.jpg"
                 alt="Lakshya Chelawat"
                 className="w-full h-full object-cover"
                 loading="lazy"

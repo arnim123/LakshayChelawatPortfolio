@@ -178,17 +178,7 @@ export default function AchievementsSection() {
           ))}
         </div>
 
-        {/* Add Your Own Note */}
-        <RevealOnScroll delay="0.3s" className="mt-12">
-          <div className="border-2 border-dashed border-cream-dim rounded-lg p-8 text-center">
-            <Plus size={24} className="text-gold mx-auto mb-3" />
-            <p className="font-body text-sm text-cream-muted max-w-xl mx-auto">
-              Have more achievements to add? This section is designed to grow
-              with Lakshya's journey. Simply duplicate any achievement card
-              above and update the image, title, date, and description.
-            </p>
-          </div>
-        </RevealOnScroll>
+
       </div>
     </section>
   );
