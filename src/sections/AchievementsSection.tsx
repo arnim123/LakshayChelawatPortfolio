@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import SectionHeader from '@/components/SectionHeader';
 import RevealOnScroll from '@/components/RevealOnScroll';
-import { Plus } from 'lucide-react';
+
 
 const achievements = [
   {
