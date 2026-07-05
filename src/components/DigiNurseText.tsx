@@ -17,7 +17,7 @@ export function DigiNurse({ className = '' }: { className?: string }) {
 
 export function RoBlaze({ className = '' }: { className?: string }) {
   return (
-    <span className={`font-display italic ${className}`}>
+    <span className={`inline whitespace-nowrap font-display italic ${className}`}>
       <span style={{ color: '#C41E3A' }}>Ro</span>
       <span style={{ color: '#E8A317' }}>Blaze</span>
     </span>

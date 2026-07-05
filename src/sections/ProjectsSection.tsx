@@ -28,7 +28,7 @@ const projects: Project[] = [
   {
     image: '/images/projects/roblaze.jpg',
     year: '2024',
-    title: 'RoBlaze Fire-Fighting Robot',
+    title: 'RoBlaze\u00a0Fire-Fighting Robot',
     description:
       'An Arduino-based autonomous robot designed to detect and extinguish fires. Equipped with sensors for fire detection, autonomous navigation, and a water-pumping mechanism. A life-saving innovation recognized at the Fire Safety Forum.',
     tags: ['Arduino', 'Robotics', 'IoT', 'Autonomous'],

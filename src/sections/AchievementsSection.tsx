@@ -18,9 +18,9 @@ const achievements = [
     image: '/images/dhahi-khalfan-recognition.jpg',
     year: '2025',
     title: 'Recognized by His Excellency Lt. Gen. Dhahi Khalfan Tamim',
-    awardedBy: 'His Excellency Lt. Gen. Dhahi Khalfan Tamim Sir',
+    awardedBy: '',
     description:
-      'Honored to be recognized by His Excellency Lt. Gen. Dhahi Khalfan Tamim Sir for contributions to innovation and technology at a young age.',
+      'Honored to be recognized for contributions to fire safety innovation.',
     badge: '🤝 RECOGNITION',
   },
   {

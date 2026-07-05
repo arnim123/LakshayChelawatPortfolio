@@ -8,7 +8,7 @@ const milestones = [
     badge: 'AGE 6',
     title: 'The Spark',
     description:
-      'Introduced to robotics for the first time. What started as a fun activity quickly became my hobby and eventually my lifelong passion. A single moment that changed everything.',
+      'Introduced to robotics for the first time. What started as a fun activity quickly became my hobby and eventually my passion. A single moment that changed everything.',
     icon: Lightbulb,
     side: 'left' as const,
   },
@@ -22,7 +22,7 @@ const milestones = [
   },
   {
     badge: '2024',
-    title: 'Building the Fire-Fighting Robot RoBlaze',
+    title: 'Building the Fire-Fighting Robot\u00a0RoBlaze',
     description:
       'Embarked on the development of an autonomous fire-fighting robot using Arduino-based technologies. Dedicated months to learning, research, programming, testing, and refining the solution designed to enhance emergency response and help save lives.',
     icon: Rocket,
