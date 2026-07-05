@@ -8,6 +8,7 @@ import JourneySection from '@/sections/JourneySection';
 import ProjectsSection from '@/sections/ProjectsSection';
 import AchievementsSection from '@/sections/AchievementsSection';
 import ContactSection from '@/sections/ContactSection';
+import FloatingWhatsApp from '@/components/FloatingWhatsApp';
 
 export default function App() {
   useLenis();
@@ -25,6 +26,7 @@ export default function App() {
         <ContactSection />
       </main>
       <Footer />
+      <FloatingWhatsApp />
     </div>
   );
 }
