@@ -22,7 +22,7 @@ export default function SectionHeader({
   const subtextRef = useScrollReveal<HTMLParagraphElement>();
 
   return (
-    <div className={`mb-16 ${centered ? 'text-center' : ''} ${className}`}>
+    <div className={`mb-10 md:mb-14 lg:mb-16 ${centered ? 'text-center' : ''} ${className}`}>
       <p ref={labelRef} className="reveal caption-label mb-4">
         {label}
       </p>
@@ -41,9 +41,9 @@ export default function SectionHeader({
       {subtext && (
         <p
           ref={subtextRef}
-          className={`reveal mt-4 font-body text-cream-muted ${
-            subtextSingleLine ? '' : 'max-w-2xl'
-          } ${centered ? 'mx-auto' : ''}`}
+          className={`reveal mt-4 font-body text-cream-muted px-1 ${
+            subtextSingleLine ? 'max-w-3xl' : 'max-w-2xl'
+          } ${centered ? 'mx-auto text-center' : ''}`}
           style={{
             fontSize: 'clamp(18px, 1.5vw, 22px)',
             lineHeight: 1.6,

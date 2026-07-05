@@ -24,7 +24,7 @@ export default function HeroSection() {
         loop
         playsInline
         preload="auto"
-        className="absolute inset-0 w-full h-full object-cover animate-hero-video"
+        className="hero-video-bg video-pan-mobile"
       >
         {/* <source src="/videos/hero-video.mp4" type="video/mp4" /> */}
         <source src={heroVideo} type="video/mp4" />
@@ -40,7 +40,7 @@ export default function HeroSection() {
       />
 
       {/* Content */}
-      <div className="relative z-10 h-full flex flex-col justify-end max-w-[1400px] mx-auto px-5 md:px-10 lg:px-20 pb-[15vh]">
+      <div className="relative z-10 h-full flex flex-col justify-end max-w-[1400px] mx-auto px-4 sm:px-5 md:px-10 lg:px-20 pb-[12vh] sm:pb-[15vh]">
         {/* Tagline */}
         <p
           className="hero-anim animate-hero-tagline font-body font-light text-sm uppercase tracking-[0.2em] text-gold mb-6"

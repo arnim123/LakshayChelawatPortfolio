@@ -132,15 +132,15 @@ function AchievementCard({
       className="h-full"
     >
       <div className="card-pattern overflow-hidden group hover:border-gold/40 transition-all duration-400 h-full">
-        <div className="flex flex-col md:flex-row h-full min-h-[380px]">
+        <div className="flex flex-col md:flex-row h-full min-h-0 md:min-h-[380px]">
           {/* Image */}
-          <div className="relative h-40 md:h-full md:w-[40%] shrink-0 overflow-hidden">
+          <div className="relative w-full md:w-[40%] shrink-0 overflow-hidden bg-navy">
             <img
               ref={imageRef}
               src={achievement.image}
               alt={achievement.title}
-              className={`absolute inset-0 w-full h-full object-cover object-center transition-transform duration-[8000ms] ease-out ${
-                isVisible ? 'scale-105' : 'scale-100'
+              className={`w-full h-auto max-h-72 sm:max-h-80 md:absolute md:inset-0 md:h-full md:max-h-none object-contain md:object-cover object-center transition-transform duration-[8000ms] ease-out ${
+                isVisible ? 'md:scale-105' : 'md:scale-100'
               }`}
               loading="lazy"
             />

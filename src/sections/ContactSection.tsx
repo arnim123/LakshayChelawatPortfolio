@@ -25,7 +25,7 @@ export default function ContactSection() {
                   <a
                     key={email}
                     href={`mailto:${email}`}
-                    className="font-body text-base text-cream hover:text-gold transition-colors duration-300"
+                    className="font-body text-base text-cream hover:text-gold transition-colors duration-300 break-all text-center"
                   >
                     {email}
                   </a>

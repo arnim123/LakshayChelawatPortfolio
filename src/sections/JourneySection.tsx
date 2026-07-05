@@ -124,7 +124,7 @@ export default function JourneySection() {
           />
 
           {/* Milestones */}
-          <div className="flex flex-col" style={{ gap: '0px' }}>
+          <div className="flex flex-col gap-8 lg:gap-0">
             {milestones.map((milestone, i) => {
               const Icon = milestone.icon;
               const isLeft = milestone.side === 'left';
@@ -138,8 +138,7 @@ export default function JourneySection() {
                     isLeft
                       ? 'lg:flex-row'
                       : 'lg:flex-row-reverse'
-                  }`}
-                  style={i > 0 ? { marginTop: '-60px' } : undefined}
+                  } ${i > 0 ? 'lg:-mt-[60px]' : ''}`}
                 >
                   {/* Card */}
                   <div
@@ -161,14 +160,15 @@ export default function JourneySection() {
                       </span>
 
                       {/* Title */}
-                      <h3 className="font-display text-white flex items-center gap-3 mb-3"
+                      <h3
+                        className="font-display text-white flex items-start gap-3 mb-3"
                         style={{
                           fontSize: 'clamp(22px, 3vw, 32px)',
                           lineHeight: 1.1,
                         }}
                       >
-                        <Icon size={22} className="text-gold flex-shrink-0" />
-                        {renderStyledText(milestone.title)}
+                        <Icon size={22} className="text-gold flex-shrink-0 mt-1" />
+                        <span className="min-w-0">{renderStyledText(milestone.title)}</span>
                       </h3>
 
                       {/* Description */}

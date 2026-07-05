@@ -95,7 +95,7 @@
 
   /* Primary button */
   .btn-primary {
-    @apply inline-block bg-gold text-navy font-body font-medium text-sm uppercase tracking-widest px-10 py-4 transition-all duration-300;
+    @apply inline-block bg-gold text-navy font-body font-medium text-xs sm:text-sm uppercase tracking-widest px-6 sm:px-10 py-3 sm:py-4 transition-all duration-300;
   }
 
   .btn-primary:hover {
@@ -105,7 +105,7 @@
 
   /* Secondary button */
   .btn-secondary {
-    @apply inline-block border border-gold text-gold bg-transparent font-body font-medium text-sm uppercase tracking-widest px-10 py-4 transition-all duration-300;
+    @apply inline-block border border-gold text-gold bg-transparent font-body font-medium text-xs sm:text-sm uppercase tracking-widest px-6 sm:px-10 py-3 sm:py-4 transition-all duration-300;
   }
 
   .btn-secondary:hover {
@@ -139,6 +139,32 @@
     border-color: rgba(212, 175, 55, 0.3);
   }
 
+  /* Mobile: pan wide videos from right to left so key content stays visible */
+  .video-pan-mobile {
+    object-position: 100% center;
+  }
+
+  .hero-video-bg {
+    @apply absolute inset-0 w-full h-full object-cover;
+  }
+
+  @media (max-width: 767px) {
+    .video-pan-mobile {
+      animation: video-pan-horizontal 22s ease-in-out infinite alternate;
+    }
+
+    .hero-video-bg {
+      animation: hero-fade-in 1.2s ease-out forwards,
+        video-pan-horizontal 22s ease-in-out 1.2s infinite alternate;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .hero-video-bg {
+      animation: hero-fade-in 1.2s ease-out forwards;
+    }
+  }
+
   /* Caption label */
   .caption-label {
     @apply font-body font-bold text-base uppercase tracking-[0.15em] text-gold;
@@ -168,9 +194,9 @@
 @layer utilities {
   /* Section padding */
   .section-padding {
-    @apply py-12 lg:py-16;
-    padding-left: clamp(20px, 4vw, 80px);
-    padding-right: clamp(20px, 4vw, 80px);
+    @apply py-10 sm:py-12 lg:py-16;
+    padding-left: clamp(16px, 4vw, 80px);
+    padding-right: clamp(16px, 4vw, 80px);
   }
 
   .section-padding-x {
@@ -205,4 +231,22 @@
 
 ::-webkit-scrollbar-thumb:hover {
   background: #E8C84B;
+}
+
+@keyframes video-pan-horizontal {
+  from {
+    object-position: 100% center;
+  }
+  to {
+    object-position: 0% center;
+  }
+}
+
+@keyframes hero-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

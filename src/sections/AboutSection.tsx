@@ -32,7 +32,7 @@ export default function AboutSection() {
           {/* Portrait — stretches to match biography height above stats */}
           <RevealOnScroll
             direction="left"
-            className="flex justify-center lg:justify-start h-full min-h-[360px] lg:min-h-0"
+            className="flex justify-center lg:justify-start h-full min-h-[360px] lg:min-h-0 min-w-0"
           >
             <div className="relative h-full w-full max-w-[340px] lg:max-w-none">
               <img
@@ -45,15 +45,15 @@ export default function AboutSection() {
           </RevealOnScroll>
 
           {/* Biography */}
-          <div className="flex flex-col">
+          <div className="flex flex-col min-w-0 pr-2 sm:pr-4 md:pr-6 lg:pr-10">
             {paragraphs.map((text, i) => (
                 <RevealOnScroll
                   key={i}
                   delay={`${0.24 + i * 0.12}s`}
-                  className={`${i >= 2 && !expanded ? 'hidden lg:block' : ''} ${expanded && i >= 2 ? 'visible' : ''}`}
+                  className={`min-w-0 ${i >= 2 && !expanded ? 'hidden lg:block' : ''} ${expanded && i >= 2 ? 'visible' : ''}`}
                 >
                   <p
-                    className="font-body font-light text-cream-muted text-justify mb-5"
+                    className="font-body font-light text-cream-muted text-justify mb-5 break-words [overflow-wrap:anywhere]"
                     style={{
                       fontSize: 'clamp(15px, 1.2vw, 20px)',
                       lineHeight: 1.7,

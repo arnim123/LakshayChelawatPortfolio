@@ -52,7 +52,7 @@ export default function Navigation() {
           <a
             href="#"
             data-scroll
-            className="font-display font-bold text-lg uppercase tracking-[0.1em] text-gold hover:text-gold-light transition-colors"
+            className="font-display font-bold text-sm sm:text-base md:text-lg uppercase tracking-[0.08em] sm:tracking-[0.1em] text-gold hover:text-gold-light transition-colors max-w-[55vw] sm:max-w-none truncate sm:overflow-visible sm:whitespace-normal"
           >
             Lakshya Chelawat
           </a>

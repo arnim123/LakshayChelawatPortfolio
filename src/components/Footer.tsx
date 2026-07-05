@@ -58,7 +58,7 @@ export default function Footer() {
                   <Mail size={18} className="text-gold flex-shrink-0" />
                   <a
                     href={`mailto:${email}`}
-                    className="font-body text-[13px] text-cream-muted hover:text-gold transition-colors duration-300"
+                    className="font-body text-[13px] text-cream-muted hover:text-gold transition-colors duration-300 break-all"
                   >
                     {email}
                   </a>
