@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { ChevronDown } from 'lucide-react';
+import heroVideo from '../../data/hero.mp4';
 
 export default function HeroSection() {
   const [scrollIndicatorVisible, setScrollIndicatorVisible] = useState(true);
@@ -25,7 +26,8 @@ export default function HeroSection() {
         preload="auto"
         className="absolute inset-0 w-full h-full object-cover animate-hero-video"
       >
-        <source src="/videos/hero-video.mp4" type="video/mp4" />
+        {/* <source src="/videos/hero-video.mp4" type="video/mp4" /> */}
+        <source src={heroVideo} type="video/mp4" />
       </video>
 
       {/* Dark Overlay Gradient */}

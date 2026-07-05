@@ -3,6 +3,7 @@ import { createPortal } from 'react-dom';
 import { X } from 'lucide-react';
 import SectionHeader from '@/components/SectionHeader';
 import RevealOnScroll from '@/components/RevealOnScroll';
+import { renderStyledText } from '@/components/DigiNurseText';
 
 type Project = {
   image: string;
@@ -18,7 +19,7 @@ const projects: Project[] = [
   {
     image: '/images/projects/naptol.jpg',
     year: '2021',
-    title: 'Naaptol',
+    title: 'Naaptol 2.0',
     description:
       'A mobile application designed to encourage healthy living and fitness among young people. My first project at age 7 - proving that innovation has no age limit.',
     tags: ['Mobile App', 'Health Tech'],
@@ -27,7 +28,7 @@ const projects: Project[] = [
   {
     image: '/images/projects/roblaze.jpg',
     year: '2024',
-    title: 'Roblaze Fire-Fighting Robot',
+    title: 'RoBlaze Fire-Fighting Robot',
     description:
       'An Arduino-based autonomous robot designed to detect and extinguish fires. Equipped with sensors for fire detection, autonomous navigation, and a water-pumping mechanism. A life-saving innovation recognized at the Fire Safety Forum.',
     tags: ['Arduino', 'Robotics', 'IoT', 'Autonomous'],
@@ -127,7 +128,7 @@ function ProjectCard({
               lineHeight: 1.1,
             }}
           >
-            {project.title}
+            {renderStyledText(project.title)}
           </h3>
 
           <p
@@ -137,7 +138,7 @@ function ProjectCard({
               lineHeight: 1.7,
             }}
           >
-            {project.description}
+            {renderStyledText(project.description)}
           </p>
 
           {/* Tags */}
@@ -195,7 +196,7 @@ function ProjectCard({
             >
               <div className="flex items-center justify-between px-4 py-3 border-b border-gold/20">
                 <p className="font-display text-white text-lg md:text-xl">
-                  RoBlaze FSF
+                  {renderStyledText('RoBlaze')} FSF
                 </p>
                 <button
                   type="button"
@@ -231,6 +232,7 @@ export default function ProjectsSection() {
           label="PROJECTS"
           heading="Innovations Built with Purpose"
           subtext="From mobile apps to healthcare devices - each project solves a real-world problem."
+          subtextSingleLine
         />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

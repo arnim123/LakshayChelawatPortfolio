@@ -36,15 +36,6 @@ const galleryFilenames = [
   '555.jpg',
 ];
 
-const layoutVariants = [
-  { span: 'col-span-2 row-span-2', aspect: 'aspect-[3/4]' },
-  { span: 'col-span-1 row-span-1', aspect: 'aspect-[4/3]' },
-  { span: 'col-span-1 row-span-1', aspect: 'aspect-[4/3]' },
-  { span: 'col-span-1 row-span-1', aspect: 'aspect-[4/3]' },
-  { span: 'col-span-1 row-span-1', aspect: 'aspect-[4/3]' },
-  { span: 'col-span-2 row-span-1', aspect: 'aspect-[16/9]' },
-];
-
 function captionFromFilename(name: string): string {
   if (name === 'lakshya-pic.jpg') return 'Lakshya';
 
@@ -61,12 +52,11 @@ function captionFromFilename(name: string): string {
   return 'A moment from the journey';
 }
 
-const INITIAL_VISIBLE_COUNT = 8;
+const INITIAL_VISIBLE_COUNT = 12;
 
-const galleryItems = galleryFilenames.map((file, i) => ({
+const galleryItems = galleryFilenames.map((file) => ({
   src: `/images/gallery/${file}`,
   caption: captionFromFilename(file),
-  ...layoutVariants[i % layoutVariants.length],
 }));
 
 export default function GallerySection() {
@@ -105,33 +95,31 @@ export default function GallerySection() {
           label="GALLERY"
           heading="Moments That Define the Journey"
           subtext="A visual collection of milestones, projects, and unforgettable experiences."
+          subtextSingleLine
         />
 
-        {/* Masonry Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
+        <div className="columns-2 md:columns-3 lg:columns-4 gap-4 md:gap-5">
           {visibleItems.map((item, i) => (
             <RevealOnScroll
               key={item.src}
-              delay={`${(i % 8) * 0.1}s`}
-              className={`${item.span} cursor-pointer group`}
+              delay={`${(i % 8) * 0.08}s`}
+              className="break-inside-avoid mb-4 md:mb-5"
             >
-              <div
-                className={`relative ${item.aspect} rounded overflow-hidden`}
+              <button
+                type="button"
+                className="w-full cursor-pointer group text-left rounded overflow-hidden border border-cream-dim/20 bg-navy-light hover:border-gold/40 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold/50"
                 onClick={() => openLightbox(i)}
               >
                 <img
                   src={item.src}
                   alt={item.caption}
-                  className="w-full h-full object-cover transition-transform duration-600 group-hover:scale-105"
+                  className="w-full h-auto block"
                   loading="lazy"
                 />
-                {/* Hover Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-navy/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
-                  <span className="font-body text-sm text-cream">
-                    {item.caption}
-                  </span>
-                </div>
-              </div>
+                <p className="font-body text-xs text-cream-muted px-3 py-2 text-center">
+                  {item.caption}
+                </p>
+              </button>
             </RevealOnScroll>
           ))}
         </div>
@@ -149,7 +137,6 @@ export default function GallerySection() {
         )}
       </div>
 
-      {/* Lightbox */}
       {lightboxOpen && (
         <div
           className="fixed inset-0 z-[70] bg-navy/95 backdrop-blur-sm flex items-center justify-center"
@@ -158,6 +145,7 @@ export default function GallerySection() {
           <button
             onClick={closeLightbox}
             className="absolute top-6 right-6 text-cream hover:text-gold transition-colors z-10"
+            aria-label="Close gallery"
           >
             <X size={32} />
           </button>
@@ -165,6 +153,7 @@ export default function GallerySection() {
           <button
             onClick={(e) => { e.stopPropagation(); goPrev(); }}
             className="absolute left-4 md:left-8 text-cream hover:text-gold transition-colors z-10"
+            aria-label="Previous photo"
           >
             <ChevronLeft size={40} />
           </button>
@@ -172,18 +161,19 @@ export default function GallerySection() {
           <button
             onClick={(e) => { e.stopPropagation(); goNext(); }}
             className="absolute right-4 md:right-8 text-cream hover:text-gold transition-colors z-10"
+            aria-label="Next photo"
           >
             <ChevronRight size={40} />
           </button>
 
           <div
-            className="max-w-[90vw] max-h-[85vh]"
+            className="max-w-[90vw] max-h-[85vh] px-4"
             onClick={(e) => e.stopPropagation()}
           >
             <img
               src={galleryItems[lightboxIndex].src}
               alt={galleryItems[lightboxIndex].caption}
-              className="max-w-full max-h-[80vh] object-contain rounded"
+              className="max-w-full max-h-[80vh] object-contain rounded mx-auto"
             />
             <p className="text-center font-body text-cream-muted text-sm mt-4">
               {galleryItems[lightboxIndex].caption}

@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import SectionHeader from '@/components/SectionHeader';
 import RevealOnScroll from '@/components/RevealOnScroll';
+import { renderStyledText } from '@/components/DigiNurseText';
 
 
 const achievements = [
@@ -14,39 +15,12 @@ const achievements = [
     badge: '🏆 AWARD',
   },
   {
-    image: '/images/colonel-zaid-al.jpg',
+    image: '/images/dhahi-khalfan-recognition.jpg',
     year: '2025',
-    title: 'Recognized by Colonel Zaid Al Sabouni Sir',
-    awardedBy: 'Colonel Zaid Al Sabouni Sir, Director of Media Department',
+    title: 'Recognized by His Excellency Lt. Gen. Dhahi Khalfan Tamim',
+    awardedBy: 'His Excellency Lt. Gen. Dhahi Khalfan Tamim Sir',
     description:
-      'Met and was recognized by Colonel Zaid Al Sabouni Sir for contributions to innovation and technology at a young age.',
-    badge: '🤝 RECOGNITION',
-  },
-  {
-    image: '/images/achievement-diginurse.jpg',
-    year: '2026',
-    title: 'DigiNurse Presented to DHA',
-    awardedBy: 'His Excellency Dr. Alawi Al-Sheikh Ali - Director General, Dubai Health Authority',
-    description:
-      'Presented the DigiNurse healthcare monitoring device to the Director General of DHA. The innovation received high praise for its potential to transform patient care.',
-    badge: '🏥 HEALTHCARE',
-  },
-  {
-    image: '/images/youngest-speaker.png',
-    year: '2025',
-    title: 'Youngest Speaker at Fire Safety Forum',
-    awardedBy: 'Fire Safety Forum Organizing Committee',
-    description:
-      'The youngest and only student invited to speak on a stage shared by leading fire safety experts, sharing insights on youth innovation in safety technology.',
-    badge: '🎤 SPEAKER',
-  },
-  {
-    image: '/images/maryam-ghalita.png',
-    year: '2025',
-    title: 'Recognized by Ms. Maryam Ghalita',
-    awardedBy: 'Ms. Maryam Ghalita, Head of Innovation, Dubai Civil Defence',
-    description:
-      'Honored to be recognized by Ms. Maryam Ghalita for contributions to innovation and youth leadership in safety technology.',
+      'Honored to be recognized by His Excellency Lt. Gen. Dhahi Khalfan Tamim Sir for contributions to innovation and technology at a young age.',
     badge: '🤝 RECOGNITION',
   },
   {
@@ -59,13 +33,58 @@ const achievements = [
     badge: '🤝 RECOGNITION',
   },
   {
-    image: '/images/dhahi-khalfan-recognition.jpg',
-    year: '2025',
-    title: 'Recognized by His Excellency Lt. Gen. Dhahi Khalfan Tamim',
-    awardedBy: 'His Excellency Lt. Gen. Dhahi Khalfan Tamim Sir',
+    image: '/images/achievement-diginurse.jpg',
+    year: '2026',
+    title: 'DigiNurse Presented to His Excellency Dr. Alawi Al-Sheikh Ali - Director General',
+    awardedBy: 'Dubai Health Authority',
     description:
-      'Honored to be recognized by His Excellency Lt. Gen. Dhahi Khalfan Tamim Sir for contributions to innovation and technology at a young age.',
+      'The DigiNurse healthcare monitoring device was presented to His Excellency Dr. Alawi Al-Sheikh Ali, Director General of the Dubai Health Authority. The innovation was highly commended for its potential to enhance patient monitoring and transform healthcare delivery.',
+    badge: '🏥 HEALTHCARE',
+  },
+  {
+    image: '/images/youngest-speaker.png',
+    year: '2025',
+    title: 'Youngest Speaker at Fire Safety Forum',
+    awardedBy: 'Fire Safety Forum Organizing Committee',
+    description:
+      'The youngest and only student invited to speak on a stage shared by leading fire safety experts, sharing insights on youth innovation in safety technology.',
+    badge: '🎤 SPEAKER',
+  },
+  {
+    image: '/images/colonel-zaid-al.jpg',
+    year: '2025',
+    title: 'Received Appreciation from Colonel Zaid Al Sabouni',
+    awardedBy: 'Director of the Media Department, Dubai Civil Defence',
+    description:
+      'Had the honor of meeting Colonel Zaid Al Sabouni Sir and received appreciation for exceptional achievements in innovation and technology, demonstrating leadership and excellence at a young age.',
     badge: '🤝 RECOGNITION',
+  },
+  {
+    image: '/images/maryam-ghalita.png',
+    year: '2025',
+    title: 'Commended by Ms. Maryam Ghalita',
+    awardedBy: 'Head of Innovation, Dubai Civil Defence',
+    description:
+      'Received commendation from Ms. Maryam Ghalita, Head of Innovation at Dubai Civil Defence, in recognition of contributions to innovation and youth leadership in fire safety technology.',
+    badge: '🤝 RECOGNITION',
+  },
+  {
+    image: '/images/anthony.jpg',
+    year: '2025',
+    title: 'Words of Encouragement from Dr. Anthony D. Parfitt',
+    awardedBy: 'Founder and CEO, CiGlobal',
+    description:
+      'Received valuable encouragement from Dr. Anthony D. Parfitt, whose support and appreciation reinforced the commitment to driving innovation and creating meaningful technological impact.',
+    badge: '🤝 RECOGNITION',
+  },
+  {
+    image: '/images/nihas.jpg',
+    year: '2025',
+    title: 'Acknowledged by Dr. Nihas Salins',
+    awardedBy: 'Hospital Director, Royal NMC, DIP',
+    description:
+      'Received acknowledgment from Dr. Nihas Salins, Hospital Director of Royal NMC, DIP, for advancing innovative healthcare solutions and demonstrating a commitment to improving patient care through digital innovation, DigiNurse.',
+    badge: '🏥 HEALTHCARE',
   },
   {
     image: '/images/gallery-5.jpg',
@@ -110,16 +129,17 @@ function AchievementCard({
   return (
     <RevealOnScroll
       delay={`${(index % 2) * 0.15 + Math.floor(index / 2) * 0.2}s`}
+      className="h-full"
     >
-      <div className="card-pattern overflow-hidden group hover:border-gold/40 transition-all duration-400">
-        <div className="flex flex-col md:flex-row">
+      <div className="card-pattern overflow-hidden group hover:border-gold/40 transition-all duration-400 h-full">
+        <div className="flex flex-col md:flex-row h-full min-h-[380px]">
           {/* Image */}
-          <div className="md:w-[40%] aspect-video md:aspect-auto overflow-hidden flex-shrink-0">
+          <div className="relative h-40 md:h-full md:w-[40%] shrink-0 overflow-hidden">
             <img
               ref={imageRef}
               src={achievement.image}
               alt={achievement.title}
-              className={`w-full h-full object-cover transition-transform duration-[8000ms] ease-out ${
+              className={`absolute inset-0 w-full h-full object-cover object-center transition-transform duration-[8000ms] ease-out ${
                 isVisible ? 'scale-105' : 'scale-100'
               }`}
               loading="lazy"
@@ -127,34 +147,34 @@ function AchievementCard({
           </div>
 
           {/* Content */}
-          <div className="p-6 md:p-8 flex flex-col justify-center md:w-[60%]">
-            <span className="caption-label mb-2">{achievement.year}</span>
+          <div className="p-5 md:p-6 flex flex-col md:w-[60%] flex-1 min-h-0">
+            <span className="caption-label mb-1.5">{achievement.year}</span>
 
             <h3
-              className="font-display text-white mb-2"
+              className="font-display text-white mb-1.5"
               style={{
-                fontSize: 'clamp(22px, 2.5vw, 28px)',
+                fontSize: 'clamp(20px, 2.2vw, 26px)',
                 lineHeight: 1.15,
               }}
             >
-              {achievement.title}
+              {renderStyledText(achievement.title)}
             </h3>
 
-            <p className="font-body text-sm text-cream mb-3">
+            <p className="font-body text-sm text-cream mb-2">
               {achievement.awardedBy}
             </p>
 
             <p
-              className="font-body font-light text-cream-muted mb-4"
+              className="font-body font-light text-cream-muted mb-3 flex-1"
               style={{
-                fontSize: 'clamp(13px, 1.1vw, 16px)',
-                lineHeight: 1.6,
+                fontSize: 'clamp(13px, 1.1vw, 15px)',
+                lineHeight: 1.55,
               }}
             >
-              {achievement.description}
+              {renderStyledText(achievement.description)}
             </p>
 
-            <span className="award-badge self-start">{achievement.badge}</span>
+            <span className="award-badge self-start mt-auto">{achievement.badge}</span>
           </div>
         </div>
       </div>
@@ -170,9 +190,10 @@ export default function AchievementsSection() {
           label="ACHIEVEMENTS"
           heading="Recognition & Honors"
           subtext="Milestones that mark the journey of a young innovator making a real impact."
+          subtextSingleLine
         />
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 md:gap-8 items-stretch">
           {achievements.map((achievement, i) => (
             <AchievementCard key={i} achievement={achievement} index={i} />
           ))}

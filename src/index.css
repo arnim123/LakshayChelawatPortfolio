@@ -141,7 +141,7 @@
 
   /* Caption label */
   .caption-label {
-    @apply font-body text-base uppercase tracking-[0.15em] text-gold;
+    @apply font-body font-bold text-base uppercase tracking-[0.15em] text-gold;
   }
 
   /* Timeline line animation */

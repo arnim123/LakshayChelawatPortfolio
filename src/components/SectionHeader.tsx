@@ -3,8 +3,9 @@ import { useScrollReveal } from '@/hooks/useScrollReveal';
 interface SectionHeaderProps {
   label: string;
   heading: string;
-  subtext?: string;
+  subtext?: React.ReactNode;
   centered?: boolean;
+  subtextSingleLine?: boolean;
   className?: string;
 }
 
@@ -13,6 +14,7 @@ export default function SectionHeader({
   heading,
   subtext,
   centered = false,
+  subtextSingleLine = false,
   className = '',
 }: SectionHeaderProps) {
   const labelRef = useScrollReveal<HTMLParagraphElement>();
@@ -39,7 +41,9 @@ export default function SectionHeader({
       {subtext && (
         <p
           ref={subtextRef}
-          className={`reveal mt-4 font-body text-cream-muted max-w-2xl ${centered ? 'mx-auto' : ''}`}
+          className={`reveal mt-4 font-body text-cream-muted ${
+            subtextSingleLine ? '' : 'max-w-2xl'
+          } ${centered ? 'mx-auto' : ''}`}
           style={{
             fontSize: 'clamp(18px, 1.5vw, 22px)',
             lineHeight: 1.6,

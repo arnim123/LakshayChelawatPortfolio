@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import SectionHeader from '@/components/SectionHeader';
+import { renderStyledText } from '@/components/DigiNurseText';
 import { Trophy, Heart, Mic, Rocket, FileText, Lightbulb } from 'lucide-react';
 
 const milestones = [
@@ -13,17 +14,17 @@ const milestones = [
   },
   {
     badge: 'AGE 7',
-    title: 'First Innovation: Naaptol',
+    title: 'First Innovation: Naaptol 2.0',
     description:
-      'Developed Naaptol, a mobile application designed to encourage healthy living and fitness. My first project proved that young minds can create meaningful solutions.',
+      'Developed Naaptol 2.0, a mobile application designed to encourage healthy living and fitness. My first project proved that young minds can create meaningful solutions.',
     icon: FileText,
     side: 'right' as const,
   },
   {
     badge: '2024',
-    title: 'Building the Fire-Fighting Robot',
+    title: 'Building the Fire-Fighting Robot RoBlaze',
     description:
-      'Began developing an autonomous fire-fighting robot using Arduino-based technologies. Months of learning, coding, testing, and refining a solution that could save lives.',
+      'Embarked on the development of an autonomous fire-fighting robot using Arduino-based technologies. Dedicated months to learning, research, programming, testing, and refining the solution designed to enhance emergency response and help save lives.',
     icon: Rocket,
     side: 'left' as const,
   },
@@ -47,8 +48,7 @@ const milestones = [
     badge: '2026',
     title: 'DigiNurse & DHA Presentation',
     description:
-      'Developed DigiNurse, a healthcare innovation that continuously monitors patient vital signs and sends real-time updates to nursing staff. Presented to His Excellency Dr. Alawi Al-Sheikh Ali Sir, Director General of the Dubai Health Authority (DHA).',
-      // 'Currently in the process of receiving a Non-provisional patent publication.',
+      'Developed DigiNurse, a system for continuous patient vital monitoring with real-time updates to nursing staff, and presented it to His Excellency Dr. Alawi Al-Sheikh Ali, Director General of the Dubai Health Authority (DHA).',
     icon: Heart,
     side: 'right' as const,
   },
@@ -168,7 +168,7 @@ export default function JourneySection() {
                         }}
                       >
                         <Icon size={22} className="text-gold flex-shrink-0" />
-                        {milestone.title}
+                        {renderStyledText(milestone.title)}
                       </h3>
 
                       {/* Description */}
@@ -179,7 +179,7 @@ export default function JourneySection() {
                           lineHeight: 1.7,
                         }}
                       >
-                        {milestone.description}
+                        {renderStyledText(milestone.description)}
                       </p>
                     </div>
                   </div>
