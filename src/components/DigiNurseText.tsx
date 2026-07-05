@@ -8,7 +8,7 @@ function hasStyledPhrases(text: string) {
 
 export function DigiNurse({ className = '' }: { className?: string }) {
   return (
-    <span className={`font-display italic ${className}`}>
+    <span className={`font-display italic font-bold ${className}`}>
       <span style={{ color: '#5B7A94' }}>Digi</span>
       <span style={{ color: '#7A9150' }}>Nurse</span>
     </span>

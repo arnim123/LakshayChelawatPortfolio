@@ -1,6 +1,3 @@
-export const WHATSAPP_URL = 'https://wa.me/918805588700';
-export const WHATSAPP_NUMBER = '+91 8805588700';
-
 export default function WhatsAppIcon({ className }: { className?: string }) {
   return (
     <svg

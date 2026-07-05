@@ -1,4 +1,5 @@
 import { Mail, MapPin } from 'lucide-react';
+import { CONTACT_EMAILS } from '@/constants/contact';
 
 const quickLinks = [
   { label: 'About', href: '#about' },
@@ -52,12 +53,17 @@ export default function Footer() {
               Contact
             </h4>
             <div className="flex flex-col gap-4">
-              <div className="flex items-center gap-3">
-                <Mail size={18} className="text-gold flex-shrink-0" />
-                <span className="font-body text-[13px] text-cream-muted">
-                  lakshya@example.com
-                </span>
-              </div>
+              {CONTACT_EMAILS.map((email) => (
+                <div key={email} className="flex items-center gap-3">
+                  <Mail size={18} className="text-gold flex-shrink-0" />
+                  <a
+                    href={`mailto:${email}`}
+                    className="font-body text-[13px] text-cream-muted hover:text-gold transition-colors duration-300"
+                  >
+                    {email}
+                  </a>
+                </div>
+              ))}
               <div className="flex items-center gap-3">
                 <MapPin size={18} className="text-gold flex-shrink-0" />
                 <span className="font-body text-[13px] text-cream-muted">

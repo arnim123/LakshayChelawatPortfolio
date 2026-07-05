@@ -1,4 +1,5 @@
-import WhatsAppIcon, { WHATSAPP_NUMBER, WHATSAPP_URL } from '@/components/WhatsAppIcon';
+import WhatsAppIcon from '@/components/WhatsAppIcon';
+import { WHATSAPP_NUMBER, WHATSAPP_URL } from '@/constants/contact';
 
 export default function FloatingWhatsApp() {
   return (

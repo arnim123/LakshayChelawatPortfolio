@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { X } from 'lucide-react';
+import { Play, X } from 'lucide-react';
 import SectionHeader from '@/components/SectionHeader';
 import RevealOnScroll from '@/components/RevealOnScroll';
 import { renderStyledText } from '@/components/DigiNurseText';
@@ -157,8 +157,11 @@ function ProjectCard({
             <button
               type="button"
               onClick={openVideo}
-              className="font-body text-sm text-gold hover:text-gold-light underline underline-offset-4 transition-colors mb-4"
+              className="group mb-4 flex w-full items-center justify-center gap-2.5 rounded border border-gold bg-gold/10 px-5 py-3.5 font-body text-sm font-medium uppercase tracking-widest text-gold transition-all duration-300 hover:bg-gold hover:text-navy focus:outline-none focus-visible:ring-2 focus-visible:ring-gold/60"
             >
+              <span className="flex h-8 w-8 items-center justify-center rounded-full border border-gold/60 bg-gold/15 transition-colors duration-300 group-hover:border-navy group-hover:bg-navy/10">
+                <Play size={14} className="ml-0.5 fill-current" aria-hidden="true" />
+              </span>
               Show video
             </button>
           )}

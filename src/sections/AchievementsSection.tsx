@@ -27,7 +27,7 @@ const achievements = [
     image: '/images/rashid-thani.png',
     year: '2025',
     title: 'Recognized by His Excellency Lt. Gen. Rashid Thani Al Matrooshi',
-    awardedBy: 'His Excellency Lt. Gen. Rashid Thani Al Matrooshi Sir',
+    awardedBy: '',
     description:
       'Had the privilege of being recognized by His Excellency Lt. Gen. Rashid Thani Al Matrooshi Sir for dedication to innovation and community impact.',
     badge: '🤝 RECOGNITION',
@@ -160,9 +160,11 @@ function AchievementCard({
               {renderStyledText(achievement.title)}
             </h3>
 
-            <p className="font-body text-sm text-cream mb-2">
-              {achievement.awardedBy}
-            </p>
+            {achievement.awardedBy && (
+              <p className="font-body text-sm text-cream mb-2">
+                {achievement.awardedBy}
+              </p>
+            )}
 
             <p
               className="font-body font-light text-cream-muted mb-3 flex-1"

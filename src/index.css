@@ -168,7 +168,7 @@
 @layer utilities {
   /* Section padding */
   .section-padding {
-    @apply py-24 lg:py-32;
+    @apply py-12 lg:py-16;
     padding-left: clamp(20px, 4vw, 80px);
     padding-right: clamp(20px, 4vw, 80px);
   }

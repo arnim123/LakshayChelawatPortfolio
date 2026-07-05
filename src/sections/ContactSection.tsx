@@ -1,11 +1,12 @@
 import SectionHeader from '@/components/SectionHeader';
 import RevealOnScroll from '@/components/RevealOnScroll';
-import WhatsAppIcon, { WHATSAPP_NUMBER, WHATSAPP_URL } from '@/components/WhatsAppIcon';
+import WhatsAppIcon from '@/components/WhatsAppIcon';
+import { CONTACT_EMAILS, WHATSAPP_NUMBER, WHATSAPP_URL } from '@/constants/contact';
 import { Mail } from 'lucide-react';
 
 export default function ContactSection() {
   return (
-    <section id="contact" className="bg-navy pt-24 lg:pt-32 pb-16 lg:pb-24 section-padding-x">
+    <section id="contact" className="bg-navy pt-12 lg:pt-16 pb-8 lg:pb-12 section-padding-x">
       <div className="container-narrow">
         <SectionHeader
           label="GET IN TOUCH"
@@ -19,9 +20,17 @@ export default function ContactSection() {
             <div className="flex flex-col items-center gap-2">
               <Mail size={20} className="text-gold" />
               <span className="caption-label">Email</span>
-              <span className="font-body text-base text-cream">
-                lakshya@example.com
-              </span>
+              <div className="flex flex-col items-center gap-1">
+                {CONTACT_EMAILS.map((email) => (
+                  <a
+                    key={email}
+                    href={`mailto:${email}`}
+                    className="font-body text-base text-cream hover:text-gold transition-colors duration-300"
+                  >
+                    {email}
+                  </a>
+                ))}
+              </div>
             </div>
 
             <div className="flex flex-col items-center gap-2">
