@@ -12,6 +12,7 @@ export default function ContactSection() {
           label="GET IN TOUCH"
           heading="Let's Connect"
           subtext="Whether it's a collaboration, speaking opportunity, or just to say hello - I'd love to hear from you."
+          subtextSingleLine
           centered
         />
 

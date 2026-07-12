@@ -102,6 +102,7 @@ export default function JourneySection() {
           label="MY JOURNEY"
           heading="A Timeline of Innovation"
           subtext="From curiosity at age 6 to groundbreaking innovation at 11."
+          subtextSingleLine
           centered
         />
 

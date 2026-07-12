@@ -42,7 +42,7 @@ export default function SectionHeader({
         <p
           ref={subtextRef}
           className={`reveal mt-4 font-body text-cream-muted px-1 ${
-            subtextSingleLine ? 'max-w-3xl' : 'max-w-2xl'
+            subtextSingleLine ? 'max-w-none xl:whitespace-nowrap' : 'max-w-2xl'
           } ${centered ? 'mx-auto text-center' : ''}`}
           style={{
             fontSize: 'clamp(18px, 1.5vw, 22px)',

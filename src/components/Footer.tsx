@@ -1,4 +1,4 @@
-import { Mail, MapPin } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import { CONTACT_EMAILS } from '@/constants/contact';
 
 const quickLinks = [
@@ -64,12 +64,6 @@ export default function Footer() {
                   </a>
                 </div>
               ))}
-              <div className="flex items-center gap-3">
-                <MapPin size={18} className="text-gold flex-shrink-0" />
-                <span className="font-body text-[13px] text-cream-muted">
-                  Dubai, United Arab Emirates
-                </span>
-              </div>
             </div>
           </div>
         </div>
