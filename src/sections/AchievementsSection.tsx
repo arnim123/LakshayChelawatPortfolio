@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
+import { X } from 'lucide-react';
 import SectionHeader from '@/components/SectionHeader';
 import RevealOnScroll from '@/components/RevealOnScroll';
 import { renderStyledText } from '@/components/DigiNurseText';
@@ -11,6 +13,8 @@ type CodingAchievement = {
   description: string;
   badge: string;
   fullImage?: boolean;
+  testimonialLink?: string;
+  testimonialImage?: string;
 };
 
 type OtherAchievement = {
@@ -56,11 +60,12 @@ const codingAchievements: CodingAchievement[] = [
     description:
       'The DigiNurse healthcare monitoring device was presented to His Excellency Dr. Alawi Al-Sheikh Ali, Director General of the Dubai Health Authority. The innovation was highly commended for its potential to enhance patient monitoring and transform healthcare delivery.',
     badge: '🏥 HEALTHCARE',
+    testimonialImage: '/images/testimonial.jpg',
   },
   {
     image: '/images/youngest-speaker.png',
     year: '2025',
-    title: 'Youngest Speaker at Fire Safety Forum',
+    title: 'Youngest Speaker at Fire Safety Forum 2025, UAE',
     awardedBy: '',
     description:
       'The youngest and only student invited to speak on a stage shared by leading fire safety experts, sharing insights on youth innovation in safety technology.',
@@ -92,6 +97,8 @@ const codingAchievements: CodingAchievement[] = [
     description:
       'Received valuable encouragement from Dr. Anthony D. Parfitt, whose support and appreciation reinforced the commitment to driving innovation and creating meaningful technological impact.',
     badge: '🤝 RECOGNITION',
+    testimonialLink:
+      'https://www.linkedin.com/posts/anthony-d-parfitt-a9aaab18a_fsfuae2025-ciglobal-preventionnotreaction-ugcPost-7323359909465546754-imbg?utm_source=social_share_send&utm_medium=android_app&rcm=ACoAAAfp3AcBVOfRE61pwKg0P19j2ShAdZi41lg&utm_campaign=share_via',
   },
   {
     image: '/images/nihas.jpg',
@@ -205,6 +212,56 @@ function AchievementTabs({
   );
 }
 
+function TestimonialImageModal({
+  src,
+  alt,
+  onClose,
+}: {
+  src: string;
+  alt: string;
+  onClose: () => void;
+}) {
+  useEffect(() => {
+    document.body.style.overflow = 'hidden';
+    return () => {
+      document.body.style.overflow = '';
+    };
+  }, []);
+
+  return createPortal(
+    <div
+      className="fixed inset-0 z-[70] bg-navy/95 backdrop-blur-sm flex items-center justify-center p-4 md:p-8"
+      onClick={onClose}
+      role="dialog"
+      aria-modal="true"
+      aria-label="Testimonial"
+    >
+      <button
+        type="button"
+        onClick={onClose}
+        className="absolute top-4 right-4 md:top-6 md:right-6 text-cream hover:text-gold transition-colors z-10"
+        aria-label="Close testimonial"
+      >
+        <X size={28} className="md:w-8 md:h-8" />
+      </button>
+
+      <div
+        className="relative w-full max-w-4xl rounded-lg border border-gold/30 bg-navy shadow-2xl overflow-hidden"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <div className="p-4 md:p-6">
+          <img
+            src={src}
+            alt={alt}
+            className="w-full max-h-[80vh] rounded object-contain mx-auto"
+          />
+        </div>
+      </div>
+    </div>,
+    document.body
+  );
+}
+
 function AchievementCard({
   achievement,
   index,
@@ -214,6 +271,20 @@ function AchievementCard({
 }) {
   const imageRef = useRef<HTMLImageElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [testimonialOpen, setTestimonialOpen] = useState(false);
+
+  const hasTestimonial = Boolean(achievement.testimonialLink || achievement.testimonialImage);
+
+  const handleTestimonialClick = () => {
+    if (achievement.testimonialLink) {
+      window.open(achievement.testimonialLink, '_blank', 'noopener,noreferrer');
+      return;
+    }
+
+    if (achievement.testimonialImage) {
+      setTestimonialOpen(true);
+    }
+  };
 
   useEffect(() => {
     const img = imageRef.current;
@@ -286,10 +357,30 @@ function AchievementCard({
               {renderStyledText(achievement.description)}
             </p>
 
-            <span className="award-badge self-start mt-auto">{achievement.badge}</span>
+            <div className="flex items-center justify-between gap-3 mt-auto flex-wrap">
+              <span className="award-badge">{achievement.badge}</span>
+
+              {hasTestimonial && (
+                <button
+                  type="button"
+                  onClick={handleTestimonialClick}
+                  className="font-body text-xs uppercase tracking-wider text-gold border border-gold/40 rounded-full px-3 py-1 hover:bg-gold/10 transition-colors shrink-0"
+                >
+                  Show Testimonial
+                </button>
+              )}
+            </div>
           </div>
         </div>
       </div>
+
+      {testimonialOpen && achievement.testimonialImage && (
+        <TestimonialImageModal
+          src={achievement.testimonialImage}
+          alt={`${achievement.title} testimonial`}
+          onClose={() => setTestimonialOpen(false)}
+        />
+      )}
     </RevealOnScroll>
   );
 }

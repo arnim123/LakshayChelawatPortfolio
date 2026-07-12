@@ -21,7 +21,7 @@ const projects: Project[] = [
     year: '2021',
     title: 'Naaptol 2.0',
     description:
-      'A mobile application designed to encourage healthy living and fitness among young people. My first project at age 7 - proving that innovation has no age limit.',
+      'A mobile application designed to encourage healthy living and fitness among all age groups. My first project at age 7 - proving that innovation has no age limit.',
     tags: ['Mobile App', 'Health Tech'],
     award: null,
   },

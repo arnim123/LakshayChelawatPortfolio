@@ -30,7 +30,7 @@ const milestones = [
   },
   {
     badge: '2025',
-    title: 'Youngest Innovator Award',
+    title: 'Youngest Speaker at Fire Safety Forum 2025, UAE',
     description:
       'Participated in the Fire Safety Forum and was honored to be recognized by His Excellency Dhahi Khalfan Tamim Sir. Received the Youngest Innovator Award and became the youngest - and only - student invited to speak on a stage shared by leading fire safety experts.',
     icon: Trophy,
