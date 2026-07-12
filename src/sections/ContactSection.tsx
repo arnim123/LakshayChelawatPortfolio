@@ -1,7 +1,7 @@
 import SectionHeader from '@/components/SectionHeader';
 import RevealOnScroll from '@/components/RevealOnScroll';
 import WhatsAppIcon from '@/components/WhatsAppIcon';
-import { CONTACT_EMAILS, WHATSAPP_NUMBER, WHATSAPP_URL } from '@/constants/contact';
+import { CONTACT_EMAILS, WHATSAPP_URL } from '@/constants/contact';
 import { Mail } from 'lucide-react';
 
 export default function ContactSection() {
@@ -35,14 +35,13 @@ export default function ContactSection() {
 
             <div className="flex flex-col items-center gap-2">
               <WhatsAppIcon className="w-5 h-5 text-gold" />
-              <span className="caption-label">WhatsApp</span>
               <a
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="font-body text-base text-cream hover:text-gold transition-colors duration-300"
+                className="caption-label hover:text-cream transition-colors duration-300"
               >
-                {WHATSAPP_NUMBER}
+                WhatsApp
               </a>
             </div>
           </div>
@@ -66,7 +65,10 @@ export default function ContactSection() {
             >
               "I believe age is never a barrier to innovation."
             </p>
-            <cite className="font-body text-sm text-cream-muted mt-3 block not-italic">
+            <cite
+              className="font-body text-cream-muted mt-3 block not-italic"
+              style={{ fontSize: '1.3125rem' }}
+            >
               - Lakshya Chelawat
             </cite>
           </blockquote>

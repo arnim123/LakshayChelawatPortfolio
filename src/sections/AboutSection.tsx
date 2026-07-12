@@ -9,7 +9,7 @@ const paragraphs = [
   `In July 2024, I began developing an autonomous fire-fighting robot using Arduino-based technologies. In 2025, I participated in the Fire Safety Forum, where I was honored to be recognized by His Excellency Dhahi Khalfan Tamim Sir and received the Youngest Innovator Award. I was also the youngest and only student invited to speak on a stage shared by leading fire safety experts.`,
   `In 2025, I developed DigiNurse, a healthcare innovation that continuously monitors patient vital signs and sends real-time updates directly to nursing staff. I had the privilege of presenting DigiNurse to His Excellency Dr. Alawi Al-Sheikh Ali Sir, Director General of the Dubai Health Authority (DHA). Today, I am proud to be the youngest student selected for my school's incubation program sponsored by Dubai SME.`,
   // `I am also in the process of receiving a Non-provisional patent publication registered in my name for this innovation.`
-  `Through robotics, healthcare technology, and innovation, I strive to create practical solutions that improve lives and contribute positively to society. I believe age is never a barrier to innovation, and I am committed to continuing my journey of learning, creating, and making a meaningful impact.`,
+  `Through robotics, advanced technology, and innovation, I strive to create practical solutions that improve lives and contribute positively to society. I believe age is never a barrier to innovation, and I am committed to continuing my journey of learning, creating, and making a meaningful impact.`,
 ];
 
 const stats = [

@@ -51,6 +51,7 @@ const galleryVideoFilenames = [
 
 const HIGHLIGHTED_VIDEO = '/images/gallery/highlighted.mp4';
 const HIGHLIGHTED_CAPTION = 'Featured moment';
+const FEATURED_SIDE_IMAGE = '/images/gallery/2.jpg';
 
 function captionFromFilename(name: string): string {
   if (name === 'lakshya-pic.jpg') return 'Lakshya';
@@ -167,7 +168,7 @@ function VideoPlayerModal({
 function FeaturedVideo({ onOpenPlayer }: { onOpenPlayer: () => void }) {
   const videoRef = useRef<HTMLVideoElement>(null);
   const containerRef = useRef<HTMLDivElement>(null);
-  const [muted, setMuted] = useState(false);
+  const [muted, setMuted] = useState(true);
 
   useEffect(() => {
     const video = videoRef.current;
@@ -254,9 +255,6 @@ function VideoThumbnail({
         />
         <PlayOverlay />
       </div>
-      <p className="font-body text-xs text-cream-muted px-3 py-2 text-center">
-        {item.caption}
-      </p>
     </button>
   );
 }
@@ -267,10 +265,14 @@ export default function GallerySection() {
   const [showAll, setShowAll] = useState(false);
   const [videoPlayer, setVideoPlayer] = useState<{ src: string; caption: string } | null>(null);
 
-  const featuredSideItems = imageItems.slice(0, FEATURED_SIDE_COUNT);
-  const masonryItems = showAll
-    ? galleryItems.slice(FEATURED_SIDE_COUNT)
-    : galleryItems.slice(FEATURED_SIDE_COUNT, FEATURED_SIDE_COUNT + INITIAL_VISIBLE_COUNT);
+  const masonryItems = (
+    showAll
+      ? galleryItems.slice(FEATURED_SIDE_COUNT)
+      : galleryItems.slice(FEATURED_SIDE_COUNT, FEATURED_SIDE_COUNT + INITIAL_VISIBLE_COUNT)
+  ).filter((item) => item.src !== FEATURED_SIDE_IMAGE);
+  const featuredSideImageIndex = galleryItems.findIndex(
+    (item) => item.src === FEATURED_SIDE_IMAGE
+  );
   const hasMore =
     galleryItems.length - FEATURED_SIDE_COUNT > INITIAL_VISIBLE_COUNT;
 
@@ -314,34 +316,31 @@ export default function GallerySection() {
         />
 
         <RevealOnScroll className="mb-6 md:mb-8">
-          <div className="grid grid-cols-1 lg:grid-cols-[5fr_3fr] gap-4 md:gap-5">
+          <div className="grid grid-cols-1 lg:grid-cols-[5fr_3fr] gap-4 md:gap-5 lg:items-stretch">
             <FeaturedVideo
               onOpenPlayer={() => openVideoPlayer(HIGHLIGHTED_VIDEO, HIGHLIGHTED_CAPTION)}
             />
 
-            <div className="grid grid-cols-2 gap-3 md:gap-4">
-              {featuredSideItems.map((item, i) => (
-                <button
-                  key={item.src}
-                  type="button"
-                  className="cursor-pointer group text-left rounded overflow-hidden border border-cream-dim/20 bg-navy-light hover:border-gold/40 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold/50"
-                  onClick={() => openLightbox(i)}
-                >
-                  <img
-                    src={item.src}
-                    alt={item.caption}
-                    className="w-full h-full object-cover aspect-square"
-                    loading="lazy"
-                  />
-                </button>
-              ))}
-            </div>
+            <button
+              type="button"
+              className="cursor-pointer group text-left rounded overflow-hidden border border-cream-dim/20 bg-navy-light hover:border-gold/40 transition-all duration-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold/50 min-h-[220px] sm:min-h-[280px] lg:min-h-[360px] h-full"
+              onClick={() => openLightbox(featuredSideImageIndex)}
+            >
+              <img
+                src={FEATURED_SIDE_IMAGE}
+                alt={captionFromFilename('2.jpg')}
+                className="w-full h-full object-contain object-center"
+                loading="lazy"
+              />
+            </button>
           </div>
         </RevealOnScroll>
 
         <div className="columns-2 md:columns-3 lg:columns-4 gap-4 md:gap-5">
           {masonryItems.map((item, i) => {
-            const globalIndex = i + FEATURED_SIDE_COUNT;
+            const globalIndex = galleryItems.findIndex(
+              (galleryItem) => galleryItem.src === item.src
+            );
             return (
               <RevealOnScroll
                 key={item.src}
@@ -365,9 +364,6 @@ export default function GallerySection() {
                       className="w-full h-auto block"
                       loading="lazy"
                     />
-                    <p className="font-body text-xs text-cream-muted px-3 py-2 text-center">
-                      {item.caption}
-                    </p>
                   </button>
                 )}
               </RevealOnScroll>
@@ -434,9 +430,6 @@ export default function GallerySection() {
               alt={currentItem.caption}
               className="max-w-full max-h-[80vh] object-contain rounded mx-auto"
             />
-            <p className="text-center font-body text-cream-muted text-sm mt-4">
-              {currentItem.caption}
-            </p>
           </div>
         </div>
       )}

@@ -43,7 +43,7 @@ export default function HeroSection() {
       <div className="relative z-10 h-full flex flex-col justify-end max-w-[1400px] mx-auto px-4 sm:px-5 md:px-10 lg:px-20 pb-[12vh] sm:pb-[15vh]">
         {/* Tagline */}
         <p
-          className="hero-anim animate-hero-tagline font-body font-light text-sm uppercase tracking-[0.2em] text-gold mb-6"
+          className="hero-anim animate-hero-tagline font-body font-bold text-sm uppercase tracking-[0.2em] text-gold mb-6"
         >
           Age is never a barrier to innovation
         </p>
@@ -68,7 +68,7 @@ export default function HeroSection() {
             lineHeight: 1.6,
           }}
         >
-          Young Innovator | Robotics Enthusiast | Grade 7, Dubai
+          Young Innovator | Robotics Enthusiast | Student
         </p>
 
         {/* CTA Buttons */}

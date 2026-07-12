@@ -155,7 +155,7 @@
 
     .hero-video-bg {
       animation: hero-fade-in 1.2s ease-out forwards,
-        video-pan-horizontal 22s ease-in-out 1.2s infinite alternate;
+        hero-video-pan-horizontal 22s ease-in-out 1.2s infinite alternate;
     }
   }
 
@@ -239,6 +239,15 @@
   }
   to {
     object-position: 0% center;
+  }
+}
+
+@keyframes hero-video-pan-horizontal {
+  from {
+    object-position: 100% center;
+  }
+  to {
+    object-position: 30% center;
   }
 }
 

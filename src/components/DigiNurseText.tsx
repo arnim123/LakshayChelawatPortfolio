@@ -45,8 +45,7 @@ export function renderStyledText(text: string): ReactNode {
       return (
         <span
           key={i}
-          className="text-gold font-medium"
-          style={{ textShadow: '0 0 12px rgba(212, 175, 55, 0.3)' }}
+          className="text-white font-medium"
         >
           {part}
         </span>

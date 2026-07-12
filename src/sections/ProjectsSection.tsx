@@ -45,6 +45,7 @@ const projects: Project[] = [
     tags: ['Healthcare', 'IoT', 'Arduino'],
     // tags: ['Healthcare', 'IoT', 'Arduino', 'Patent Pending'],
     award: '🏆 Presented to DHA Director General',
+    video: '/videos/diginurse_video.mp4',
     // award: '🏆 Presented to DHA Director General | Patent Pending',
   },
 ];
@@ -112,7 +113,7 @@ function ProjectCard({
           </div>
           {/* Year Badge */}
           <span
-            className="absolute top-4 right-4 award-badge z-10"
+            className="absolute top-4 left-4 award-badge z-10"
             style={{ backgroundColor: '#C41E3A' }}
           >
             {project.year}
@@ -191,7 +192,7 @@ function ProjectCard({
             onClick={closeVideo}
             role="dialog"
             aria-modal="true"
-            aria-label="RoBlaze FSF video"
+            aria-label={`${project.title} video`}
           >
             <div
               className="relative w-full max-w-4xl rounded-lg border border-gold/30 bg-navy shadow-2xl overflow-hidden"
@@ -199,7 +200,7 @@ function ProjectCard({
             >
               <div className="flex items-center justify-between px-4 py-3 border-b border-gold/20">
                 <p className="font-display text-white text-lg md:text-xl">
-                  {renderStyledText('RoBlaze')} FSF
+                  {renderStyledText(project.title)}
                 </p>
                 <button
                   type="button"
