@@ -364,7 +364,7 @@ function AchievementCard({
                 <button
                   type="button"
                   onClick={handleTestimonialClick}
-                  className="font-body text-xs uppercase tracking-wider text-gold border border-gold/40 rounded-full px-3 py-1 hover:bg-gold/10 transition-colors shrink-0"
+                  className="font-body text-xs font-semibold uppercase tracking-wider text-gold border border-gold bg-gold/15 rounded-full px-4 py-1.5 hover:bg-gold hover:text-navy transition-all duration-300 shadow-[0_0_14px_rgba(212,175,55,0.3)] shrink-0 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold/60"
                 >
                   Show Testimonial
                 </button>
