@@ -9,6 +9,7 @@ import ProjectsSection from '@/sections/ProjectsSection';
 import AchievementsSection from '@/sections/AchievementsSection';
 import ContactSection from '@/sections/ContactSection';
 import FloatingWhatsApp from '@/components/FloatingWhatsApp';
+import { Analytics } from '@vercel/analytics/react';
 
 export default function App() {
   useLenis();
@@ -27,6 +28,7 @@ export default function App() {
       </main>
       <Footer />
       <FloatingWhatsApp />
+      <Analytics />
     </div>
   );
 }
