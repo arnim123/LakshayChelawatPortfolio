@@ -13,6 +13,7 @@ type Project = {
   tags: string[];
   award: string | null;
   video?: string;
+  imageFit?: 'cover' | 'contain';
 };
 
 const projects: Project[] = [
@@ -47,6 +48,25 @@ const projects: Project[] = [
     award: '🏆 Presented to DHA Director General',
     video: '/videos/diginurse_video.mp4',
     // award: '🏆 Presented to DHA Director General | Patent Pending',
+  },
+  {
+    image: '/images/projects/a-eye.jpg',
+    year: '2026',
+    title: 'A-Eye',
+    description:
+      'A-eye Smart Vision is a wearable assistive device, built on Raspberry Pi 5, that continuously captures and analyses the surroundings in real time. It turns visual information into voice guidance and alerts about obstacles and hazards, supporting safer navigation and greater independence.',
+    tags: ['Raspberry Pi 5', 'Assistive Tech', 'Wearable'],
+    award: null,
+  },
+  {
+    image: '/images/projects/a-eye-voice.jpg',
+    year: '2026',
+    title: 'A-eye Voice Assistant',
+    description:
+      'A-eye Voice Assistant is a compact, voice-enabled companion built on an ESP32. It lets users ask questions and hear spoken answers, offering a simple hands-free interaction that complements the main A-eye device.',
+    tags: ['ESP32', 'Voice', 'Assistive Tech'],
+    award: null,
+    imageFit: 'contain',
   },
 ];
 
@@ -103,11 +123,22 @@ function ProjectCard({
       >
         {/* Image */}
         <div className="relative aspect-[4/3] overflow-hidden">
-          <div ref={imageRef} className="w-full h-[120%] -mt-[10%]">
+          <div
+            ref={imageRef}
+            className={
+              project.imageFit === 'contain'
+                ? 'flex h-full w-full items-center justify-center bg-[#f3f0e8]'
+                : 'w-full h-[120%] -mt-[10%]'
+            }
+          >
             <img
               src={project.image}
               alt={project.title}
-              className="w-full h-full object-cover"
+              className={
+                project.imageFit === 'contain'
+                  ? 'h-full w-full object-contain'
+                  : 'w-full h-full object-cover'
+              }
               loading="lazy"
             />
           </div>

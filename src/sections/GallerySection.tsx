@@ -10,6 +10,12 @@ type GalleryItem = {
   type: 'image' | 'video';
 };
 
+const pinnedGalleryFilenames = [
+  '20261019_accessabilities_entrance.jpg',
+  '20261019_accessabilities_hall.jpg',
+  '20261102_emirates_inventors.jpg',
+];
+
 const galleryFilenames = [
   'lakshya-pic.jpg',
   '20231008_161958.jpg',
@@ -41,6 +47,7 @@ const galleryFilenames = [
   '10.jpg',
   '222.jpg',
   '555.jpg',
+  ...pinnedGalleryFilenames,
 ];
 
 const galleryVideoFilenames = [
@@ -86,14 +93,21 @@ const FEATURED_SIDE_COUNT = 4;
 
 function shuffleIntoGallery(images: GalleryItem[], videos: GalleryItem[]): GalleryItem[] {
   const featured = images.slice(0, FEATURED_SIDE_COUNT);
-  const rest = [...images.slice(FEATURED_SIDE_COUNT), ...videos];
+  const pinnedSrcs = new Set(
+    pinnedGalleryFilenames.map((file) => `/images/gallery/${file}`)
+  );
+  const pool = [...images.slice(FEATURED_SIDE_COUNT), ...videos];
+  const pinned = pinnedGalleryFilenames
+    .map((file) => pool.find((item) => item.src === `/images/gallery/${file}`))
+    .filter((item): item is GalleryItem => Boolean(item));
+  const rest = pool.filter((item) => !pinnedSrcs.has(item.src));
 
   for (let i = rest.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [rest[i], rest[j]] = [rest[j], rest[i]];
   }
 
-  return [...featured, ...rest];
+  return [...featured, ...pinned, ...rest];
 }
 
 const galleryItems: GalleryItem[] = shuffleIntoGallery(imageItems, videoItems);
