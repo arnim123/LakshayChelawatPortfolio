@@ -26,6 +26,25 @@ type OtherAchievement = {
 
 const codingAchievements: CodingAchievement[] = [
   {
+    image: '/images/ahmed-majjan.jpeg',
+    year: '2026',
+    title: 'Recognised by Mr. Ahmed Majjan Sir, Chairman, Emirates Inventors Association, Dubai',
+    awardedBy: '',
+    description:
+      'I had the honour of presenting my projects "A-Eye" to Mr. Ahmed Majjan Sir (Chairman, Emirates Inventors Association, Dubai), who recognised my passion for innovation and the potential benefit of my projects to society.',
+    badge: '🤝 RECOGNITION',
+  },
+  {
+    image: '/images/accessabilities.jpeg',
+    year: '2026',
+    title: 'Recognition at AccessAbilities Expo, Dubai, 2026',
+    awardedBy: '',
+    description:
+      'Recognized at the AccessAbilities Expo for his outstanding project "A-Eye" - a Smart Vision & Navigation Device and Chatbot.',
+    badge: '🏆 AWARD',
+    fullImage: true,
+  },
+  {
     image: '/images/youngest-innovator-award.jpg',
     year: '2025',
     title: 'Youngest Innovator Award',
@@ -111,7 +130,7 @@ const codingAchievements: CodingAchievement[] = [
     fullImage: true,
   },
   {
-    image: '/images/school-incubation.jpeg',
+    image: '/images/incubation.jpeg',
     year: '2025',
     title: 'Youngest in School Incubation Program',
     awardedBy: 'Dubai SME & School Innovation Center',
