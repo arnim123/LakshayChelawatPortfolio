@@ -1,6 +1,6 @@
 import { Fragment, type ReactNode } from 'react';
 
-const STYLED_PATTERN = /(AccessAbilities Expo|DigiNurse|Youngest Innovator Award|RoBlaze|Roblaze)/gi;
+const STYLED_PATTERN = /(AccessAbilities Expo|DigiNurse|Youngest Innovator Award|RoBlaze|Roblaze|Ms\. Fatima Martin)/gi;
 
 function hasStyledPhrases(text: string) {
   return STYLED_PATTERN.test(text);
@@ -60,6 +60,14 @@ export function renderStyledText(text: string): ReactNode {
 
     if (/^roblaze$/i.test(part)) {
       return <RoBlaze key={i} />;
+    }
+
+    if (/^ms\. fatima martin$/i.test(part)) {
+      return (
+        <span key={i} className="font-bold">
+          {part}
+        </span>
+      );
     }
 
     if (part === 'Youngest Innovator Award') {

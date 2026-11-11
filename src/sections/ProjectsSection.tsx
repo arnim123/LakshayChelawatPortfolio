@@ -18,38 +18,6 @@ type Project = {
 
 const projects: Project[] = [
   {
-    image: '/images/projects/naptol.jpg',
-    year: '2021',
-    title: 'Naaptol 2.0',
-    description:
-      'A mobile application designed to encourage healthy living and fitness among all age groups. My first project at age 7 - proving that innovation has no age limit.',
-    tags: ['Mobile App', 'Health Tech'],
-    award: null,
-  },
-  {
-    image: '/images/projects/roblaze.jpg',
-    year: '2024',
-    title: 'RoBlaze\u00a0Fire-Fighting Robot',
-    description:
-      'An Arduino-based autonomous robot designed to detect and extinguish fires. Equipped with sensors for fire detection, autonomous navigation, and a water-pumping mechanism. A life-saving innovation recognized at the Fire Safety Forum.',
-    tags: ['Arduino', 'Robotics', 'IoT', 'Autonomous'],
-    award: '🏆 Youngest Innovator Award - Fire Safety Forum 2025',
-    video: '/videos/roblaze-fsf.mp4',
-  },
-  {
-    image: '/images/projects/diginurse.jpg',
-    year: '2025',
-    title: 'DigiNurse',
-    description:
-      'A healthcare innovation that continuously monitors patient vital signs and sends real-time updates directly to nursing staff. Presented to the Director General of Dubai Health Authority.',
-      // 'A Non-provisional patent publication is in process.',
-    tags: ['Healthcare', 'IoT', 'Arduino'],
-    // tags: ['Healthcare', 'IoT', 'Arduino', 'Patent Pending'],
-    award: '🏆 Presented to DHA Director General',
-    video: '/videos/diginurse_video.mp4',
-    // award: '🏆 Presented to DHA Director General | Patent Pending',
-  },
-  {
     image: '/images/projects/a-eye.jpg',
     year: '2026',
     title: 'A-Eye',
@@ -67,6 +35,38 @@ const projects: Project[] = [
     tags: ['ESP32', 'Voice', 'Assistive Tech'],
     award: null,
     imageFit: 'contain',
+  },
+  {
+    image: '/images/projects/diginurse.jpg',
+    year: '2025',
+    title: 'DigiNurse',
+    description:
+      'A healthcare innovation that continuously monitors patient vital signs and sends real-time updates directly to nursing staff. Presented to the Director General of Dubai Health Authority.',
+      // 'A Non-provisional patent publication is in process.',
+    tags: ['Healthcare', 'IoT', 'Arduino'],
+    // tags: ['Healthcare', 'IoT', 'Arduino', 'Patent Pending'],
+    award: '🏆 Presented to DHA Director General',
+    video: '/videos/diginurse_video.mp4',
+    // award: '🏆 Presented to DHA Director General | Patent Pending',
+  },
+  {
+    image: '/images/projects/naptol.jpg',
+    year: '2021',
+    title: 'Naaptol 2.0',
+    description:
+      'A mobile application designed to encourage healthy living and fitness among all age groups. My first project at age 7 - proving that innovation has no age limit.',
+    tags: ['Mobile App', 'Health Tech'],
+    award: null,
+  },
+  {
+    image: '/images/projects/roblaze.jpg',
+    year: '2024',
+    title: 'RoBlaze\u00a0Fire-Fighting Robot',
+    description:
+      'An Arduino-based autonomous robot designed to detect and extinguish fires. Equipped with sensors for fire detection, autonomous navigation, and a water-pumping mechanism. A life-saving innovation recognized at the Fire Safety Forum.',
+    tags: ['Arduino', 'Robotics', 'IoT', 'Autonomous'],
+    award: '🏆 Youngest Innovator Award - Fire Safety Forum 2025',
+    video: '/videos/roblaze-fsf.mp4',
   },
 ];
 

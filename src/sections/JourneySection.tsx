@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import SectionHeader from '@/components/SectionHeader';
 import { renderStyledText } from '@/components/DigiNurseText';
-import { Trophy, Heart, Mic, Rocket, FileText, Lightbulb } from 'lucide-react';
+import { Trophy, Heart, Mic, Rocket, FileText, Lightbulb, Eye, Award } from 'lucide-react';
 
 const milestones = [
   {
@@ -50,6 +50,22 @@ const milestones = [
     description:
       'Developed DigiNurse, a system for continuous patient vital monitoring with real-time updates to nursing staff, and presented it to His Excellency Dr. Alawi Al-Sheikh Ali, Director General of the Dubai Health Authority (DHA).',
     icon: Heart,
+    side: 'right' as const,
+  },
+  {
+    badge: '2026',
+    title: 'A-eye Smart Wearable & Assistant',
+    description:
+      'I developed "A-eye", a robotic, smart wearable safety device designed for people of determination, to continuously provide real-time guidance, and issue alerts about potential obstacles or hazards by capturing and analysing the surroundings on real-time basis. Additionally, the device features an interactive assistant capable of answering user questions on the go.',
+    icon: Eye,
+    side: 'left' as const,
+  },
+  {
+    badge: '2026',
+    title: 'AccessAbilities Expo & Inventors Association',
+    description:
+      'I participated in the AccessAbilities Expo, Dubai, where I showcased my latest innovation. I also became a proud member of the Emirates Inventors Association, Dubai. I was awarded with a Medal, Certificate and cash reward by Engineer Ahmed Abdullah Majjan, Chairman, Emirates Inventors Association for my outstanding projects at the forum.',
+    icon: Award,
     side: 'right' as const,
   },
 ];

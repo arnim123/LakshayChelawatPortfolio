@@ -11,7 +11,6 @@ type GalleryItem = {
 };
 
 const pinnedGalleryFilenames = [
-  '20261019_accessabilities_entrance.jpg',
   '20261019_accessabilities_hall.jpg',
   '20261102_emirates_inventors.jpg',
 ];

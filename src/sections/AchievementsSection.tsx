@@ -33,13 +33,15 @@ const codingAchievements: CodingAchievement[] = [
     description:
       'I had the honour of presenting my projects "A-Eye" to Mr. Ahmed Majjan Sir (Chairman, Emirates Inventors Association, Dubai), who recognised my passion for innovation and the potential benefit of my projects to society.',
     badge: '🤝 RECOGNITION',
+    fullImage: true,
   },
   {
     image: '/images/ahmed-hussaini.jpeg',
     year: '2026',
     title: 'Commended by Mr. Ahmed Hussaini, Executive Director, Emirates Inventors Association',
     awardedBy: '',
-    description: '',
+    description:
+      'With Mr. Ahmed Hussaini, Executive Director, Emirates Inventors Association & Ms. Nabila Binhraiz.',
     badge: '🤝 RECOGNITION',
     fullImage: true,
   },
@@ -142,7 +144,7 @@ const codingAchievements: CodingAchievement[] = [
     image: '/images/incubation.jpeg',
     year: '2025',
     title: 'Youngest in School Incubation Program',
-    awardedBy: 'With Ms. Fatima Martin Principal and CEO, Gems New Millennium School, Dubai',
+    awardedBy: 'With Ms. Fatima Martin, Principal and CEO, Gems New Millennium School, Dubai',
     description:
       'Selected as the youngest student for the school\'s incubation program sponsored by Dubai SME - a platform to develop innovative ideas into viable solutions.',
     badge: '🚀 INCUBATION',
@@ -371,7 +373,7 @@ function AchievementCard({
 
             {achievement.awardedBy && (
               <p className="font-body text-sm text-cream mb-2">
-                {achievement.awardedBy}
+                {renderStyledText(achievement.awardedBy)}
               </p>
             )}
 
