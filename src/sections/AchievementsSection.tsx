@@ -35,6 +35,15 @@ const codingAchievements: CodingAchievement[] = [
     badge: '🤝 RECOGNITION',
   },
   {
+    image: '/images/ahmed-hussaini.jpeg',
+    year: '2026',
+    title: 'Commended by Mr. Ahmed Hussaini, Executive Director, Emirates Inventors Association',
+    awardedBy: '',
+    description: '',
+    badge: '🤝 RECOGNITION',
+    fullImage: true,
+  },
+  {
     image: '/images/accessabilities.jpeg',
     year: '2026',
     title: 'Recognition at AccessAbilities Expo, Dubai, 2026',
@@ -133,7 +142,7 @@ const codingAchievements: CodingAchievement[] = [
     image: '/images/incubation.jpeg',
     year: '2025',
     title: 'Youngest in School Incubation Program',
-    awardedBy: 'Dubai SME & School Innovation Center',
+    awardedBy: 'With Ms. Fatima Martin Principal and CEO, Gems New Millennium School, Dubai',
     description:
       'Selected as the youngest student for the school\'s incubation program sponsored by Dubai SME - a platform to develop innovative ideas into viable solutions.',
     badge: '🚀 INCUBATION',
