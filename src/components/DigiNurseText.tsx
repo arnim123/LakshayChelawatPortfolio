@@ -17,14 +17,7 @@ export function DigiNurse({ className = '' }: { className?: string }) {
 
 export function AccessAbilitiesExpo({ className = '' }: { className?: string }) {
   return (
-    <span
-      className={`inline whitespace-nowrap align-baseline ${className}`}
-      style={{
-        fontFamily: '"Montserrat", sans-serif',
-        fontWeight: 800,
-        letterSpacing: '-0.03em',
-      }}
-    >
+    <span className={`inline whitespace-nowrap align-baseline ${className}`}>
       <span style={{ color: '#FCB813' }}>Access</span>
       <span style={{ color: '#F26F21' }}>Abilities</span>
       <span style={{ color: '#FCB813' }}> Expo</span>

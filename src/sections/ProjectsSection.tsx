@@ -20,18 +20,19 @@ const projects: Project[] = [
   {
     image: '/images/projects/a-eye.jpg',
     year: '2026',
-    title: 'A-Eye',
+    title: 'A-eye Smart Vision',
     description:
       'A-eye Smart Vision is a wearable assistive device, built on Raspberry Pi 5, that continuously captures and analyses the surroundings in real time. It turns visual information into voice guidance and alerts about obstacles and hazards, supporting safer navigation and greater independence.',
     tags: ['Raspberry Pi 5', 'Assistive Tech', 'Wearable'],
     award: null,
+    video: '/videos/a-eye-accessabilities.mp4',
   },
   {
     image: '/images/projects/a-eye-voice.jpg',
     year: '2026',
-    title: 'A-eye Voice Assistant',
+    title: 'A-eye Chat Bot',
     description:
-      'A-eye Voice Assistant is a compact, voice-enabled companion built on an ESP32. It lets users ask questions and hear spoken answers, offering a simple hands-free interaction that complements the main A-eye device.',
+      'A-eye Chat Bot is a compact, voice-enabled companion built on an ESP32. It lets users ask questions and hear spoken answers, offering a simple hands-free interaction that complements the main A-eye device.',
     tags: ['ESP32', 'Voice', 'Assistive Tech'],
     award: null,
     imageFit: 'contain',
@@ -50,15 +51,6 @@ const projects: Project[] = [
     // award: '🏆 Presented to DHA Director General | Patent Pending',
   },
   {
-    image: '/images/projects/naptol.jpg',
-    year: '2021',
-    title: 'Naaptol 2.0',
-    description:
-      'A mobile application designed to encourage healthy living and fitness among all age groups. My first project at age 7 - proving that innovation has no age limit.',
-    tags: ['Mobile App', 'Health Tech'],
-    award: null,
-  },
-  {
     image: '/images/projects/roblaze.jpg',
     year: '2024',
     title: 'RoBlaze\u00a0Fire-Fighting Robot',
@@ -67,6 +59,15 @@ const projects: Project[] = [
     tags: ['Arduino', 'Robotics', 'IoT', 'Autonomous'],
     award: '🏆 Youngest Innovator Award - Fire Safety Forum 2025',
     video: '/videos/roblaze-fsf.mp4',
+  },
+  {
+    image: '/images/projects/naptol.jpg',
+    year: '2021',
+    title: 'Naaptol 2.0',
+    description:
+      'A mobile application designed to encourage healthy living and fitness among all age groups. My first project at age 7 - proving that innovation has no age limit.',
+    tags: ['Mobile App', 'Health Tech'],
+    award: null,
   },
 ];
 

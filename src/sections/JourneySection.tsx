@@ -54,9 +54,9 @@ const milestones = [
   },
   {
     badge: '2026',
-    title: 'A-eye Smart Wearable & Assistant',
+    title: 'A-eye Smart Vision & Chat Bot',
     description:
-      'I developed "A-eye", a robotic, smart wearable safety device designed for people of determination, to continuously provide real-time guidance, and issue alerts about potential obstacles or hazards by capturing and analysing the surroundings on real-time basis. Additionally, the device features an interactive assistant capable of answering user questions on the go.',
+      'I developed "A-eye", a robotic, smart wearable safety device designed for people of determination, to continuously provide real-time guidance, and issue alerts about potential obstacles or hazards by capturing and analysing the surroundings on real-time basis. Additionally, the device features an interactive Chat Bot capable of answering user questions on the go.',
     icon: Eye,
     side: 'left' as const,
   },
